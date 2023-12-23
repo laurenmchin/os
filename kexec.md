@@ -1,23 +1,19 @@
 # Tired of rebooting just to test your newly compiled kernel? Shortcircuit the entire boot process w/ kexec!
 
-### Step 1: Install kexec Tools
-Most Linux distributions come with `kexec tools` available in their package repositories. 
+### Step 1: Install `kexec tools`
+Most Linux distributions come with `kexec tools` available in their package repositories, so the installation process is seamlessly easy.
 
-You can install them using your distribution's package manager. 
-
-On Debian-based systems like Ubuntu, you would use:
+On Debian-based systems, run the following:
 
 ```
 sudo apt-get update
 sudo apt-get install kexec-tools
 ```
-### Step 2: Configure kexec
-After installing `kexec-tools`, you need to tell it which kernel to load and with what parameters. 
+### Step 2: Configure `kexec`
+After installing `kexec-tools`, you need to tell `kexec` which kernel image to load and with what parameters (i.e., the initial RAM disk, any command line params, such as those found at `/proc/cmdline`). 
 
-This is typically done by specifying the kernel image and the initial RAM disk (initrd) along with the default kernel command line parameters (which can be found at `/proc/cmdline`).
-
-Find the Kernel and Initrd:
-Locate the kernel image (vmlinuz) and the initial RAM disk (initrd.img) that you want to load. These are usually found in /boot. For example:
+#### Identify the Path to the Kernel Image and `initrd` to Load:
+Your compiled kernel images (`vmlinuz`) and the initial RAM disk (`initrd.img`) are typically found in `/boot`, with pathnames like:
 
 ```
 /boot/vmlinuz-<version>
