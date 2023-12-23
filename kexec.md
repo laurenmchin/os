@@ -1,4 +1,4 @@
-# Tired of rebooting your kernel? Shortcircuit the entire process w/ kexec!
+# Tired of rebooting just to test your newly compiled kernel? Shortcircuit the entire boot process w/ kexec!
 
 ### Step 1: Install kexec Tools
 Most Linux distributions come with `kexec tools` available in their package repositories. 
